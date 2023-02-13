@@ -1,0 +1,133 @@
+ <section id="product1" class="section-p1">
+      <h2>Featured Products</h2>
+      <p>Summer Collection New Mordern Designs</p>
+      <div class="product-container">
+        <!-- first 1 container lenge , jisme sare cards aayege -->
+
+        <div class="single-product-Card">
+          <img src="./img/products/f1.jpg" alt="prod1" />
+          <div class="desc">
+            <span>adidas</span>
+            <h5>Cartoon Astronaut T-shirts</h5>
+            <div class="stars">
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+            </div>
+            <h4>$78</h4>
+          </div>
+          <a href="#" class="cart">
+            <!-- <i class="fa fa-cart-plus" aria-hidden="true"></i>  -->
+            <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+          </a>
+        </div>
+
+        <div class="single-product-Card">
+          <img src="./img/products/f2.jpg" alt="prod3" />
+          <div class="desc">
+            <span>adidas</span>
+            <h5>Cartoon Astronaut T-shirts</h5>
+            <div class="stars">
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+            </div>
+            <h4>$78</h4>
+          </div>
+          <a href="#" class="cart">
+            <!-- <i class="fa fa-cart-plus" aria-hidden="true"></i>  -->
+            <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+          </a>
+        </div>
+
+      </div>
+    </section>
+
+
+    --------------------------------------------------------
+
+    CSS -> 
+
+    #product1 {
+  /* jo bhi likha hoga vo sara center krliya parent me dekr prop yeh */
+  text-align: center;
+}
+
+#product1 .product-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 20px;
+  flex-wrap: wrap;
+}
+
+#product1 .single-product-Card {
+  /* Here - humne 1 outer box jiske aandr sara conten aayega */
+  width: 23%;
+  min-width: 250px;
+  padding: 10px 12px;
+  border: 1px solid #cce7d0;
+  border-radius: 25px;
+  cursor: pointer;
+  box-shadow: 20px 20px 30px rgba(0, 0, 0, 0.1);
+  margin: 15px 0;
+  transition: all 0.5s;
+  position: relative;
+}
+
+#product1 .single-product-Card:hover {
+  box-shadow: 20px 20px 30px rgba(0, 0, 0, 0.2);
+}
+
+#product1 .single-product-Card img {
+  width: 100%;
+  border-radius: 20px;
+}
+
+#product1 .single-product-Card .desc {
+  text-align: start;
+  padding: 10px 0;
+}
+
+#product1 .single-product-Card .desc span {
+  color: #606063;
+  font-size: 14px;
+}
+
+#product1 .single-product-Card .desc h5 {
+  padding-top: 7px;
+  color: #1a1a1a;
+  font-size: 16px;
+}
+
+#product1 .single-product-Card .desc i {
+  font-size: 14px;
+  color: rgb(243, 181, 25);
+}
+
+#product1 .single-product-Card .desc h4 {
+  padding-top: 7px;
+  font-size: 15px;
+  font-weight: 700;
+  color: #088178;
+}
+
+#product1 .single-product-Card .cart {
+  /* basically 1 border tyar kra jiske andr cart aajaye */
+  width: 40px;
+  height: 40px;
+  line-height: 40px;
+  border-radius: 50px;
+  background-color: #ece7d0;
+  position: absolute;
+  /* Note -> JBHI HUM POSITION ABSOLUTE DETE HAI, INNER ELEMENT PR, AUR VO APNI CORRECT 
+  POSITION PR NAHI JATA AGR TOH PARENT KO "POSITION:RELATIVE" DEDO. */
+  bottom: 20px;
+  right: 10px;
+  font-weight: 500;
+  color: #088178;
+}

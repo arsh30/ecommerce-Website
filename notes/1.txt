@@ -1,0 +1,15 @@
+1rem = 16px;
+
+
+1 - create all global styling, h1, h2, h3, h4, h5 , h6, add font family 
+
+2- Navbar
+    - nav tag used 
+    - then logo jo hoga usko a tag ke andr wrap krdege
+    - div - iske andr ul and li ke andr a tags taki sare 
+            menu links bn jaye
+           
+            - last me cart ka icon hai, SO FONT-AWESOME CDN link use krege and paste 
+            krege Head me
+            - jo item lgana hai, usko hum font-awesome website pr search krlege
+             copy i tag eg: <i class="fa fa-cart-shopping"></i>

@@ -1,0 +1,407 @@
+@import url("https://fonts.googleapis.com/css2?family=League+Spartan:wght@100;200;300;400;500;600;700;800;900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "League Spartan", sans-serif;
+}
+
+h1 {
+  font-size: 50px;
+  line-height: 64px;
+  color: #222;
+}
+
+h2 {
+  font-size: 46px;
+  line-height: 54px;
+  color: #222;
+}
+
+h4 {
+  font-size: 20px;
+  color: #222;
+}
+
+h6 {
+  font-size: 12px;
+  font-weight: 700;
+}
+
+p {
+  /* 1rem - root element = 16px */
+  font-size: 16px;
+  color: #465b52;
+  margin: 15px 0 20px 0;
+  /* top bottom right left */
+}
+
+.section-p1 {
+  padding: 40px 80px;
+}
+
+.section-m1 {
+  margin: 40px 0;
+}
+
+button.normal {
+  font-size: 14px;
+  font-weight: 600;
+  padding: 15px 30px;
+  color: #000;
+  background-color: #fff;
+  border-radius: 4px;
+  cursor: pointer;
+  border: none;
+  outline: none;
+  /* transition bcoz jb hover krege toh ye transition apply hoje */
+  transition: all 0.5s;
+}
+
+body {
+  width: 100%;
+}
+
+/* HEADER START*/
+#header {
+  /*abhi sara 1 col me aara hai, so usko 1 line me lekr aana hai, so we use display flex*/
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  /* Now ab yespace between se left and right me items chipak gye hai bilkul 
+  so we ADD SOME GAP, SO ADD PADDING */
+  padding: 20px 80px;
+  background: #e3e6f3;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.7);
+  /* box shadow: x - 0 pixels right shift hojegi, agr - denge toh left shift hojegi
+  - y- 5px means 5 pixels niche ki trf felegi, and agr minus 15 dege toh upr ki trf
+  20px blur , and last color */
+
+  /* add z index taki stack order sabse jyda rahe, and ye top pr rahe sabse */
+  z-index: 999;
+
+  /* Abhi hum scroll krre hai toh Navbar bhi move ho rahi hai but vo hum nahi chahte */
+  position: sticky;
+  top: 0;
+  left: 0;
+}
+
+#nav-links {
+  /* 1st div, jiske andr sare links liye hai, and uske andr 1 hor div jisme sare items
+    aayege - so isko propeerty set krege, uske andr li and A tags 
+    
+    - Overal -> jo li unka parent Ul, so parent ko display flex diiya taki sare child pr
+    property apply hoje */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* border: 1px solid black; */
+}
+
+#nav-links li {
+  list-style: none;
+  /* ab gap dena hai, taki har menu ke andr thoda gap aaje left right se */
+  padding: 0 20px;
+
+  /* TAKI UNDER LINE WALA EFFFECT AAJAYE, HVER KRNE PAR AA NAHI RAHA THA ISLIYE
+  ISKO POSITION RELATIVE DEGE */
+  position: relative;
+}
+
+#nav-links li a {
+  text-decoration: none;
+  font-size: 20px;
+  font-weight: 600;
+  color: #1a1a1a;
+  transition: all 0.5s;
+}
+
+#nav-links li a:hover,
+#nav-links li a.active {
+  color: #088178;
+  /* we want ki smoothly ho, so, jiske upr hover lgaya hai usko property dedo 
+  transition:all 0.5s*/
+
+  /* nav-links li a.active -> ye isliye kra active class add bcoz hum chahte hai ki
+  Home by default underline rahe, and jispr click kro toh vo line uske upr chli jaye
+  so isliye humne ACTIVE class add krdi 
+  
+  So for that -> Home ko by default Active rakhna hai, toh uspr a tag me class add krege 
+  active - jisse ki vo hight light hojega*/
+}
+
+#nav-links li a.active::after,
+#nav-links li a:hover::after {
+  /* Now we are adding the Under line hoye jb hover kre to add krege pseudo class 
+  by default ye after jo hai vo INLINE ELEMENT HAI
+  */
+  content: "";
+  width: 30%;
+  height: 2px;
+  background-color: #088178;
+  position: absolute;
+  bottom: -4px;
+  left: 20px;
+
+  /* Note - agr yeh Kam na kre toh inspect krege, and home jo hai uske baad dekehege ki
+  after class add hori hai  
+  
+  -> NOTE ->  IMP -> AGR YE KAAM NAHI KRRA TOH USKE PICHE KA REASON HAI, 
+  IDR POSITION ABSOLUTE DI HAI INSIDE CHILD COMPONENT, SO FIRSTLY HUM PARENT COMPONENT 
+  JO HOGA USKO POSITION:RELATIVE DENGE TB YE WORK KREGA, SO PARENT ELEM JO HAI VO LIST 
+  TAG HAI
+  
+  */
+
+  /* YE DIYA -> nav-links li a:hover::after -> 
+  TAKI YE JO MENU ICONS HAI SABKE UPR CLASS LGJAYE */
+}
+
+/*--------------- HOME PAGE - HERO SECTION--------------------- */
+
+#hero {
+  height: 90vh;
+  width: 100%;
+  /* 1st add background image in this section */
+  background-image: url("./img/hero4.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: top 18% right 0;
+
+  /* jo text hai top left pr hai, but we want ki vo scenter pr aaje, so we add padding from left and right */
+  padding: 0 80px;
+
+  /* we want ki jo text hai vo center pr aajaye so display flex denge */
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+#hero h4 {
+  /* add color on text */
+  padding-bottom: 15px;
+}
+
+#hero h1 {
+  /* add color on text */
+  color: #088178;
+}
+
+#hero button {
+  /* style button, in out website we have some background toh vo dege phle uske andr button design krege, 
+  so uske liye background image lgaege */
+  background-image: url("./img/button.png");
+  background-color: transparent;
+  color: #088178;
+  border: none;
+
+  /* Background hlka sa show hora hai but pura background show Nahi ho raha hai, so for fixing this, hum padding dege 
+  basically jo background image lgayi hai usko bda krrre hai taki button visible ho*/
+  padding: 14px 80px 14px 68px;
+  background-repeat: no-repeat;
+  cursor: pointer;
+  font-weight: 700;
+  font-size: 15px;
+}
+
+/* HOME PAGE - FEATURES SECTIION */
+/* 1st hume space chaiye top bottom se so upr umne class di hai vo dedege, .section-p1  */
+
+#features .feature-box {
+  /* box -> basically hume iske andr img chaiye and h1 ki heading bhi, so for that jo parent div hai */
+  width: 180px;
+  border: 1px solid #cce7d0;
+  text-align: center;
+
+  /* padding di, taki vo center me aajaye and 1 box jo hai vo visible ho ske */
+  padding: 25px 15px;
+  box-shadow: 20px 20px 34px rgba(0, 0, 0, 0.3);
+  border-radius: 4px;
+  margin: 15px 0;
+  cursor: pointer;
+}
+
+#features .feature-box:hover {
+  /* we want ki jbhi koi hover kre toh box shadow kam hojaye */
+  box-shadow: 10px 10px 54px rgba(70, 62, 221, 0.2);
+}
+
+#features .feature-box img {
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+#features .feature-box h6 {
+  /* inline block -> bcoz jb hum padding dere toh left and right se boht jyda space
+  Arhi thi islie inline-block krdiya */
+  display: inline-block;
+
+  background-color: #fddde4;
+  color: #088178;
+  padding: 9px 8px 6px 8px;
+  /* top right bottom left */
+
+  line-height: 1;
+  border-radius: 4px;
+}
+
+#features .feature-box:nth-child(2) h6 {
+  /* nth child means 2nd wale child jo isme uska color change krdo 
+  feature box ke andr sare div hai, toh unka 2nd child pr ye prop apply krdo*/
+  background-color: #cdebbc;
+}
+
+#features .feature-box:nth-child(3) h6 {
+  /* nth child means 2nd wale child jo isme uska color change krdo 
+  feature box ke andr sare div hai, toh unka 2nd child pr ye prop apply krdo*/
+  background-color: #d1e8f2;
+}
+
+#features .feature-box:nth-child(4) h6 {
+  /* nth child means 2nd wale child jo isme uska color change krdo 
+  feature box ke andr sare div hai, toh unka 2nd child pr ye prop apply krdo*/
+  background-color: #cdd4f8;
+}
+
+#features .feature-box:nth-child(5) h6 {
+  /* nth child means 2nd wale child jo isme uska color change krdo 
+  feature box ke andr sare div hai, toh unka 2nd child pr ye prop apply krdo*/
+  background-color: #f6dbf6;
+}
+
+#features .feature-box:nth-child(6) h6 {
+  /* nth child means 2nd wale child jo isme uska color change krdo 
+  feature box ke andr sare div hai, toh unka 2nd child pr ye prop apply krdo*/
+  background-color: #fff2e5;
+}
+
+#features {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+/* ----------- HOME - FEATURED PRODUCTS ---------- */
+
+#product1 {
+  /* jo bhi likha hoga vo sara center krliya parent me dekr prop yeh */
+  text-align: center;
+}
+
+#product1 .product-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 20px;
+  flex-wrap: wrap;
+}
+
+#product1 .single-product-Card {
+  /* Here - humne 1 outer box jiske aandr sara conten aayega */
+  width: 23%;
+  min-width: 250px;
+  padding: 10px 12px;
+  border: 1px solid #cce7d0;
+  border-radius: 25px;
+  cursor: pointer;
+  box-shadow: 20px 20px 30px rgba(0, 0, 0, 0.1);
+  margin: 15px 0;
+  transition: all 0.5s;
+  position: relative;
+}
+
+#product1 .single-product-Card:hover {
+  box-shadow: 20px 20px 30px rgba(0, 0, 0, 0.2);
+}
+
+#product1 .single-product-Card img {
+  width: 100%;
+  border-radius: 20px;
+}
+
+#product1 .single-product-Card .desc {
+  text-align: start;
+  padding: 10px 0;
+}
+
+#product1 .single-product-Card .desc span {
+  color: #606063;
+  font-size: 14px;
+}
+
+#product1 .single-product-Card .desc h5 {
+  padding-top: 7px;
+  color: #1a1a1a;
+  font-size: 16px;
+}
+
+#product1 .single-product-Card .desc i {
+  font-size: 14px;
+  color: rgb(243, 181, 25);
+}
+
+#product1 .single-product-Card .desc h4 {
+  padding-top: 7px;
+  font-size: 15px;
+  font-weight: 700;
+  color: #088178;
+}
+
+#product1 .single-product-Card .cart {
+  /* basically 1 border tyar kra jiske andr cart aajaye */
+  width: 40px;
+  height: 40px;
+  line-height: 40px;
+  border-radius: 50px;
+  background-color: #ece7d0;
+  position: absolute;
+  /* Note -> JBHI HUM POSITION ABSOLUTE DETE HAI, INNER ELEMENT PR, AUR VO APNI CORRECT 
+  POSITION PR NAHI JATA AGR TOH PARENT KO "POSITION:RELATIVE" DEDO. */
+  bottom: 20px;
+  right: 10px;
+  font-weight: 500;
+  color: #088178;
+}
+
+/* ------------ HOME PAGE -> BANNER ------------------ */
+#banner {
+  text-align: center;
+  background-image: url("./img/banner/b2.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  /* Note -> isne jo height li hai vo utni hi lii hai, jitni text hai sara usme */
+  width: 100%;
+  height: 40vh;
+
+  /* Ab height and width dene ke baad sara content upr ki trf shift hogya
+  we want ki vo center me aajaye, so display flex denge */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+#banner h4 {
+  color: #fff;
+  font-size: 16px;
+}
+
+#banner h2 {
+  color: #fff;
+  font-size: 30px;
+  padding: 10px 0;
+}
+
+#banner h2 span {
+  color: #ef3636;
+}
+
+#banner button:hover {
+  background-color: #088178;
+  color: #fff;
+}

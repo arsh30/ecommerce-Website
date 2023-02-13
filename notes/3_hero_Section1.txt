@@ -1,0 +1,50 @@
+----------------CSS ------------>
+
+/*--------------- HOME PAGE - HERO SECTION--------------------- */
+
+#hero {
+  height: 90vh;
+  width: 100%;
+  /* 1st add background image in this section */
+  background-image: url("./img/hero4.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: top 18% right 0;
+
+  /* jo text hai top left pr hai, but we want ki vo scenter pr aaje, so we add padding from left and right */
+  padding: 0 80px;
+
+  /* we want ki jo text hai vo center pr aajaye so display flex denge */
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+#hero h4 {
+  /* add color on text */
+  padding-bottom: 15px;
+}
+
+#hero h1 {
+  /* add color on text */
+  color: #088178;
+}
+
+#hero button {
+  /* style button, in out website we have some background toh vo dege phle uske andr button design krege, 
+  so uske liye background image lgaege */
+  background-image: url("./img/button.png");
+  background-color: transparent;
+  color: #088178;
+  border: none;
+
+  /* Background hlka sa show hora hai but pura background show Nahi ho raha hai, so for fixing this, hum padding dege 
+  basically jo background image lgayi hai usko bda krrre hai taki button visible ho*/
+  padding: 14px 80px 14px 68px;
+  background-repeat: no-repeat;
+  cursor: pointer;
+  font-weight: 700;
+  font-size: 15px;
+}
+

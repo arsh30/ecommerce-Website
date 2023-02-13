@@ -1,0 +1,97 @@
+/* HEADER START*/
+#header {
+  /*abhi sara 1 col me aara hai, so usko 1 line me lekr aana hai, so we use display flex*/
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  /* Now ab yespace between se left and right me items chipak gye hai bilkul 
+  so we ADD SOME GAP, SO ADD PADDING */
+  padding: 20px 80px;
+  background: #e3e6f3;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.7);
+  /* box shadow: x - 0 pixels right shift hojegi, agr - denge toh left shift hojegi
+  - y- 5px means 5 pixels niche ki trf felegi, and agr minus 15 dege toh upr ki trf
+  20px blur , and last color */
+
+   /* add z index taki stack order sabse jyda rahe, and ye top pr rahe sabse */
+  z-index: 999;
+
+  /* Abhi hum scroll krre hai toh Navbar bhi move ho rahi hai but vo hum nahi chahte */
+  position: sticky;
+  top: 0;
+  left: 0;
+}
+
+#nav-links {
+  /* 1st div, jiske andr sare links liye hai, and uske andr 1 hor div jisme sare items
+    aayege - so isko propeerty set krege, uske andr li and A tags 
+    
+    - Overal -> jo li unka parent Ul, so parent ko display flex diiya taki sare child pr
+    property apply hoje */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#nav-links li {
+  list-style: none;
+  /* ab gap dena hai, taki har menu ke andr thoda gap aaje left right se */
+  padding: 0 20px;
+
+  /* TAKI UNDER LINE WALA EFFFECT AAJAYE, HVER KRNE PAR AA NAHI RAHA THA ISLIYE
+  ISKO POSITION RELATIVE DEGE */
+  position: relative;
+}
+
+#nav-links li a {
+  text-decoration: none;
+  font-size: 20px;
+  font-weight: 600;
+  color: #1a1a1a;
+  transition: all 0.5s;
+}
+
+#nav-links li a:hover,
+#nav-links li a.active {
+  color: #088178;
+  /* we want ki smoothly ho, so, jiske upr hover lgaya hai usko property dedo 
+  transition:all 0.5s*/
+
+  /* nav-links li a.active -> ye isliye kra active class add bcoz hum chahte hai ki
+  Home by default underline rahe, and jispr click kro toh vo line uske upr chli jaye
+  so isliye humne ACTIVE class add krdi 
+  
+  So for that -> Home ko by default Active rakhna hai, toh uspr a tag me class add krege 
+  active - jisse ki vo hight light hojega*/
+}
+
+#nav-links li a.active::after,
+#nav-links li a:hover::after {
+  /* Now we are adding the Under line hoye jb hover kre to add krege pseudo class 
+  by default ye after jo hai vo INLINE ELEMENT HAI
+  */
+  content: "";
+  width: 30%;
+  height: 2px;
+  background-color: #088178;
+  position: absolute;
+  bottom: -4px;
+  left: 20px;
+
+  /* Note - agr yeh Kam na kre toh inspect krege, and home jo hai uske baad dekehege ki
+  after class add hori hai  
+  
+  -> NOTE ->  IMP -> AGR YE KAAM NAHI KRRA TOH USKE PICHE KA REASON HAI, 
+  IDR POSITION ABSOLUTE DI HAI INSIDE CHILD COMPONENT, SO FIRSTLY HUM PARENT COMPONENT 
+  JO HOGA USKO POSITION:RELATIVE DENGE TB YE WORK KREGA, SO PARENT ELEM JO HAI VO LIST 
+  TAG HAI
+  
+  */
+
+  /* YE DIYA -> nav-links li a:hover::after -> 
+  TAKI YE JO MENU ICONS HAI SABKE UPR CLASS LGJAYE */
+}
+
+
+---------FINISH------------

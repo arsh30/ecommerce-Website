@@ -1,0 +1,70 @@
+/* HOME PAGE - FEATURES SECTIION */
+/* 1st hume space chaiye top bottom se so upr umne class di hai vo dedege, .section-p1  */
+
+#features .feature-box {
+  /* box -> basically hume iske andr img chaiye and h1 ki heading bhi, so for that jo parent div hai */
+  width: 180px;
+  border: 1px solid #cce7d0;
+  text-align: center;
+
+  /* padding di, taki vo center me aajaye and 1 box jo hai vo visible ho ske */
+  padding: 25px 15px;
+  box-shadow: 20px 20px 34px rgba(0, 0, 0, 0.3);
+  border-radius: 4px;
+  margin: 15px 0;
+  cursor: pointer;
+}
+
+#features .feature-box:hover {
+  /* we want ki jbhi koi hover kre toh box shadow kam hojaye */
+  box-shadow: 10px 10px 54px rgba(70, 62, 221, 0.2);
+}
+
+#features .feature-box img {
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+#features .feature-box h6 {
+  /* inline block -> bcoz jb hum padding dere toh left and right se boht jyda space
+  Arhi thi islie inline-block krdiya */
+  display: inline-block;
+
+  background-color: #fddde4;
+  color: #088178;
+  padding: 9px 8px 6px 8px;
+  /* top right bottom left */
+
+  line-height: 1;
+  border-radius: 4px;
+}
+
+#features .feature-box:nth-child(2) h6 {
+  /* nth child means 2nd wale child jo isme uska color change krdo 
+  feature box ke andr sare div hai, toh unka 2nd child pr ye prop apply krdo*/
+  background-color: #cdebbc;
+}
+
+#features .feature-box:nth-child(3) h6 {
+  /* nth child means 2nd wale child jo isme uska color change krdo 
+  feature box ke andr sare div hai, toh unka 2nd child pr ye prop apply krdo*/
+  background-color: #d1e8f2;
+}
+
+#features .feature-box:nth-child(4) h6 {
+  /* nth child means 2nd wale child jo isme uska color change krdo 
+  feature box ke andr sare div hai, toh unka 2nd child pr ye prop apply krdo*/
+  background-color: #cdd4f8;
+}
+
+#features .feature-box:nth-child(5) h6 {
+  /* nth child means 2nd wale child jo isme uska color change krdo 
+  feature box ke andr sare div hai, toh unka 2nd child pr ye prop apply krdo*/
+  background-color: #f6dbf6;
+}
+
+#features .feature-box:nth-child(6) h6 {
+  /* nth child means 2nd wale child jo isme uska color change krdo 
+  feature box ke andr sare div hai, toh unka 2nd child pr ye prop apply krdo*/
+  background-color: #fff2e5;
+}
